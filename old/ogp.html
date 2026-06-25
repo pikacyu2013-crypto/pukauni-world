@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>OGP Image — 1200x630</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .ogp {
+    width: 1200px; height: 630px;
+    position: relative; overflow: hidden;
+    font-family: 'Noto Sans JP', sans-serif;
+    display: flex; align-items: center;
+  }
+
+  .ogp::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 4px; background: #b07c1e; z-index: 5;
+  }
+  .ogp::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 4px; background: #b07c1e; z-index: 5;
+  }
+
+  .photo-bg {
+    position: absolute; inset: 0;
+    background: url('../asset/pika.jpg') 25% 20% / cover no-repeat;
+  }
+  .overlay-dark {
+    position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(90deg, rgba(26,26,46,0.4) 0%, rgba(26,26,46,0.85) 40%, rgba(26,26,46,0.95) 100%);
+  }
+  .overlay-dots {
+    position: absolute; inset: 0; z-index: 2;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 4px 4px;
+  }
+
+  .content {
+    position: relative; z-index: 2;
+    padding: 0 80px;
+  }
+
+  .logo {
+    font-size: 18px; font-weight: 900; color: #b07c1e;
+    letter-spacing: 0.25em; margin-bottom: 24px;
+  }
+  .headline {
+    font-size: 48px; font-weight: 900;
+    color: #ffffff; line-height: 1.5;
+    margin-bottom: 24px;
+  }
+  .headline em { font-style: normal; color: #d4a843; }
+
+  .sub {
+    font-size: 22px; color: rgba(255,255,255,0.5);
+    line-height: 1.8;
+  }
+
+  .badge {
+    position: absolute; right: 80px; top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+  }
+  .badge-circle {
+    width: 160px; height: 160px; border-radius: 50%;
+    border: 3px solid #b07c1e;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+  }
+  .badge-main {
+    font-size: 28px; font-weight: 900; color: #b07c1e;
+  }
+  .badge-sub {
+    font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 4px;
+  }
+</style>
+</head>
+<body style="background:#e0e0e0;display:flex;align-items:center;justify-content:center;min-height:100vh;">
+<div class="ogp">
+  <div class="photo-bg"></div>
+  <div class="overlay-dark"></div>
+  <div class="overlay-dots"></div>
+
+  <div class="content">
+    <div class="logo">PIKA UNIA</div>
+    <h1 class="headline">
+      爆音の中で、<br>
+      <em>あなたの本音を叫べ。</em>
+    </h1>
+    <p class="sub">
+      プロドラマーPIKAの生ドラム体験セッション<br>
+      音楽スタジオで、身体に閉じ込められた本音を解放する
+    </p>
+  </div>
+
+  <div class="badge">
+    <div class="badge-circle">
+      <div class="badge-main">参加無料</div>
+      <div class="badge-sub">体験セッション</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

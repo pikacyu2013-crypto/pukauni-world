@@ -1,0 +1,84 @@
+/* ============================================================
+   PIKA☆UNIA Design Tokens
+   Source: design/MASTER.json (Layer 1)
+   Generated: 2026-05-01
+   下流 (ry-craft / ry-slide / nurture richmenu) はこのファイルを @import する。
+   LP 既稼働 (lp/styles.css) と完全一致。直接編集禁止 — MASTER.json を変更してから派生再生成。
+   ============================================================ */
+
+:root {
+  /* -------- Color: Surface -------- */
+  --color-base: #F7F4EE;            /* オフホワイト・生成り — primary bg */
+  --color-surface: #FFFFFF;         /* 純白 — elevated surface */
+
+  /* -------- Color: Ink (text) -------- */
+  --color-ink: #1A1A1A;             /* 墨黒 — primary text / 反転 bg */
+  --color-ink-soft: #3F3F3F;        /* 弱墨 — secondary text */
+  --color-muted: #7A756C;           /* 燻し — tertiary text / caption */
+
+  /* -------- Color: Accent -------- */
+  --color-accent-deep: #8B1A1A;     /* 深紅 — pain-axis / 太陽・情熱 */
+  --color-accent-gold: #B8860B;     /* 金 — benefit-axis / 魂・価値 */
+
+  /* -------- Color: Structure -------- */
+  --color-border: #E5E0D5;
+  --color-divider: rgba(26, 26, 26, 0.08);
+
+  /* -------- Color: External Brand (constrained) -------- */
+  --color-line-green: #06C755;      /* LINE brand — primary CTA のみ */
+
+  /* -------- Typography: Stack -------- */
+  --font-serif: 'Shippori Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+  --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', sans-serif;
+
+  /* -------- Spacing scale (4-base) -------- */
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* -------- Section padding -------- */
+  --section-py-desktop: 96px;
+  --section-py-mobile: 64px;
+  --container-max: 900px;
+  --container-px: 24px;
+
+  /* -------- Radius -------- */
+  --radius-none: 0px;
+  --radius-subtle: 2px;
+  --radius-small: 4px;
+  --radius-pill: 999px;
+
+  /* -------- Shadow -------- */
+  --shadow-none: none;
+  --shadow-cta-rest: 0 4px 14px rgba(6, 199, 85, 0.35);
+  --shadow-cta-hover: 0 6px 20px rgba(6, 199, 85, 0.45);
+  --shadow-fixed-cta: 0 -4px 24px rgba(0, 0, 0, 0.2);
+  --shadow-hero-text: 0 2px 20px rgba(0, 0, 0, 0.4);
+
+  /* -------- Motion -------- */
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --duration-instant: 0.1s;
+  --duration-quick: 0.2s;
+  --duration-default: 0.3s;
+  --duration-deliberate: 0.4s;
+}
+
+/* prefers-reduced-motion full compliance */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-instant: 0.01ms;
+    --duration-quick: 0.01ms;
+    --duration-default: 0.01ms;
+    --duration-deliberate: 0.01ms;
+  }
+}
