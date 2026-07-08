@@ -96,7 +96,7 @@
   });
 
   /* ============ LINE Add Friend URL Injection ============ */
-  const LINE_ADD_URL = window.__PIKA_CONFIG?.lineAddUrl || 'https://line.me/R/ti/p/%40583bjuit';
+  const LINE_ADD_URL = window.__PIKA_CONFIG?.lineAddUrl || 'https://s.lmes.jp/landing-qr/2007823244-g627Jxpo?uLand=FDsNFP';
   const lineBtn = document.getElementById('line-add-friend');
   if (lineBtn) {
     lineBtn.href = LINE_ADD_URL;
