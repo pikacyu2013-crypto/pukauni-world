@@ -11,22 +11,22 @@
   const VARIANTS = {
     A: {
       h1: '解放のドラムが、<br>あなたを変える。',
-      sub: '人は、解放なしには生きていけない。<br>本音を叫ぶ90分。大阪・東京 — 完全無料リアル体験、受付中。'
+      sub: '人は、解放なしには生きていけない。<br>本音を叫ぶ120分。大阪・東京 — 完全無料リアル体験、受付中。'
     },
     B: {
       h1: '夢を止めてる、<br>そいつを、爆破する。',
-      sub: '怒りも、悲しみも、苦しみも。解放のドラムが、全部、外に出す90分。'
+      sub: '怒りも、悲しみも、苦しみも。解放のドラムが、全部、外に出す120分。'
     },
     C: {
       h1: '思考が、止まる。<br>残るのは、ありのままの自分。',
-      sub: 'ヨガでも瞑想でも届かなかった奥に、解放のドラムだけが届く。90分のリアル体験。'
+      sub: 'ヨガでも瞑想でも届かなかった奥に、解放のドラムだけが届く。120分のリアル体験。'
     },
     D: {
       h1: '目が笑ってないって、<br>もう言わせない。',
-      sub: '本音を飲み込み続けたあなたへ。解放のドラムが、笑顔の奥を取り戻す90分。'
+      sub: '本音を飲み込み続けたあなたへ。解放のドラムが、笑顔の奥を取り戻す120分。'
     },
     E: {
-      h1: '本来の自分に戻る、<br>90分。',
+      h1: '本来の自分に戻る、<br>120分。',
       sub: 'PIKA☆UNIA 解放のドラム体験会。大阪・東京 — 完全無料、お一人さま1回限り。'
     }
   };
@@ -39,26 +39,54 @@
    * 差し替え方法: quote=実際の声、seg=属性、placeholder行を削除。配列の件数がそのままスライド枚数。
    */
   const VOICES = [
-    { seg: '30代・大阪・会社員',      placeholder: true, quote: '（声①｜短い一言）ここに参加者の実際の感想が入ります。' },
-    { seg: '40代・東京・主婦',        placeholder: true, quote: '（声②｜中くらい）爆音を浴びながら叫んだあとの体感を、参加者自身の言葉で。実際のコメントに差し替えてください。' },
-    { seg: '20代・大阪・看護師',      placeholder: true, quote: '（声③｜長め）体験会前後でどう変わったかを語る、少し長めの声がここに入ります。思考が止まった瞬間、本音が出た瞬間など、参加者本人の言葉をそのまま掲載してください。捏造は禁止です。' },
-    { seg: '40代・東京・経営者',      placeholder: true, quote: '（声④）実際の声に差し替え。' },
-    { seg: '30代・大阪・フリーランス', placeholder: true, quote: '（声⑤｜中くらい）「目が笑ってない」と言われ続けた人の、体験後の声などをここに。' },
-    { seg: '50代・東京・教員',        placeholder: true, quote: '（声⑥）実際の声に差し替え。' },
-    { seg: '30代・大阪・セラピスト',   placeholder: true, quote: '（声⑦｜中くらい）ドラムの振動が身体に届いた感覚を、参加者の言葉で。' },
-    { seg: '40代・東京・会社員',      placeholder: true, quote: '（声⑧）実際の声に差し替え。' },
-    { seg: '20代・大阪・学生',        placeholder: true, quote: '（声⑨｜中くらい）はじめて本音を声に出せた、という体験談などをここに。' },
-    { seg: '30代・東京・主婦',        placeholder: true, quote: '（声⑩）実際の声に差し替え。' },
-    { seg: '40代・大阪・自営業',      placeholder: true, quote: '（声⑪｜長め）家を出るまでは半信半疑だったが、会場で何が起きたか——参加者本人の言葉で、少し長めに語る声がここに入ります。' },
-    { seg: '30代・東京・デザイナー',   placeholder: true, quote: '（声⑫）実際の声に差し替え。' },
-    { seg: '50代・大阪・主婦',        placeholder: true, quote: '（声⑬｜中くらい）長年抱えていたものが軽くなった、という声などをここに。' },
-    { seg: '30代・東京・看護師',      placeholder: true, quote: '（声⑭）実際の声に差し替え。' },
-    { seg: '40代・大阪・会社員',      placeholder: true, quote: '（声⑮｜中くらい）涙が出た、笑えた、など感情の解放を語る声をここに。' },
-    { seg: '20代・東京・フリーランス', placeholder: true, quote: '（声⑯）実際の声に差し替え。' },
-    { seg: '40代・大阪・教員',        placeholder: true, quote: '（声⑰｜中くらい）周りの参加者と本音をぶつけ合えた体験などをここに。' },
-    { seg: '30代・東京・経営者',      placeholder: true, quote: '（声⑱）実際の声に差し替え。' },
-    { seg: '50代・大阪・自営業',      placeholder: true, quote: '（声⑲｜長め）参加を迷っている人へのメッセージ形式の声などを、参加者本人の言葉でここに掲載してください。' },
-    { seg: '30代・東京・主婦',        placeholder: true, quote: '（声⑳）実際の声に差し替え。' }
+    {
+      photo: 'assets/voices/v1.png',
+      headline: '思考が飛んで、一瞬で“自分に戻る感覚”があった。',
+      quote: '涙も笑いも止まらない時間でした。ずっと置いてきた自分を迎えに行けた気がします。',
+      seg: '栃木県在住　40代女性／飲食店経営'
+    },
+    {
+      photo: 'assets/voices/v2.png',
+      headline: '楽しすぎて童心の喜びがすごかった！',
+      quote: '自分の“音”を初めて全身で浴びて、理屈じゃなくて気づいたら身体が先に動いてた！最幸の時間とセッションありがとうございました！',
+      seg: '北海道在住　30代女性／コーチコンサルタント'
+    },
+    {
+      photo: 'assets/voices/v3.png',
+      headline: 'マジサイコーだったぁ！！！！ 鼓動が高鳴って最高に楽しかった',
+      quote: 'これぞ「解放」を体感してやりたいことにチューニングできました！',
+      seg: '東京都在住　20代女性／ときめきナビゲーターみほほ'
+    },
+    {
+      photo: 'assets/voices/v4.png',
+      headline: '言葉を交わさずとも私の中の本質を見抜かれたようなそんな時間でした。',
+      quote: '人を優先してしまう私の癖が認識できて、音の解放は人生と繋がってる、もっと自分の音を出したくなりました！継続的に受けていきたいです。',
+      seg: '福島県在住　30代女性／オンライン秘書'
+    },
+    {
+      photo: 'assets/voices/v5.png',
+      headline: 'まるで人生が聞こえて来るようでした。',
+      quote: '胸の奥が揺さぶられて、溢れるほどにエネルギーに満ち溢れて、家族や周り、自分自身にも感謝の気持ちが湧き上がりました。ありがとうございました！',
+      seg: '北海道在住　30代女性／シンガーソングライター　小澤ちひろ'
+    },
+    {
+      photo: 'assets/voices/v6.png',
+      headline: '受け取れたのは『世界の真理』でした。',
+      quote: '自己解放セッションで安心感が身体に刻まれて、世界と繋がってる感がバチバチして、自分への無価値観が音を浴びた瞬間に、一瞬で消え自分の能力に気づけた。',
+      seg: '兵庫県在住　30代女性／マインドコンサルタント'
+    },
+    {
+      photo: 'assets/voices/v7.png',
+      headline: '何にも縛られない自由な自分の感覚を思い出せた。',
+      quote: '思考優位になっていて枠の中に収まる感覚だったけど、何にも縛られない自由な自分の感覚を思い出せた。',
+      seg: '東京都在住　30代女性／心身調律師'
+    },
+    {
+      photo: 'assets/voices/v8.png',
+      headline: '人の目ばかり気にしてた自分が、思いっきり笑って叫んでた。',
+      quote: '解放ってこういうことなんだ！自分ってこんなに感覚豊かだったんだって嬉しかったです。',
+      seg: '大阪府在住　20代女性／学生'
+    }
   ];
 
   const AXIS_KEYWORDS = {
@@ -271,20 +299,44 @@
       li.className = 'voice-card';
       if (v.placeholder) li.dataset.placeholder = 'true';
 
+      const nodes = [];
+
+      if (v.photo) {
+        const fig = document.createElement('figure');
+        fig.className = 'voice-avatar';
+        const img = document.createElement('img');
+        img.src = v.photo;
+        img.alt = (v.seg ? v.seg + ' — ' : '') + '体験会参加者';
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        fig.appendChild(img);
+        nodes.push(fig);
+      }
+
       const mark = document.createElement('span');
       mark.className = 'voice-quote-mark';
       mark.setAttribute('aria-hidden', 'true');
       mark.textContent = '“';
+      nodes.push(mark);
+
+      if (v.headline) {
+        const h = document.createElement('p');
+        h.className = 'voice-headline';
+        h.textContent = v.headline;
+        nodes.push(h);
+      }
 
       const q = document.createElement('p');
       q.className = 'voice-quote';
       q.textContent = v.quote;
+      nodes.push(q);
 
       const a = document.createElement('p');
       a.className = 'voice-attribution';
       a.textContent = v.seg || '体験会参加者';
+      nodes.push(a);
 
-      li.append(mark, q, a);
+      li.append(...nodes);
       frag.appendChild(li);
     });
     track.appendChild(frag);
