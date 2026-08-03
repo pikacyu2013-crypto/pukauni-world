@@ -46,7 +46,11 @@ fbq('track', 'PageView');
 <link rel="stylesheet" href="./styles.css">
 
 <!-- LINE友だち追加URL — エルメ流入経路 FDsNFP 経由（タグ付与＋ステップA自動開始）。プレーンURLだとステップAに入らずファネル断絶するため必ずこの追跡URLを使う -->
-<script>window.__PIKA_CONFIG = { lineAddUrl: 'https://s.lmes.jp/landing-qr/2007823244-g627Jxpo?uLand=FDsNFP' };</script>
+<script>window.__PIKA_CONFIG = {
+  lineAddUrl: 'https://s.lmes.jp/landing-qr/2007823244-g627Jxpo?uLand=FDsNFP',      /* オーガニック(既定) */
+  lineAddUrlAd: 'https://s.lmes.jp/landing-qr/2007823244-g627Jxpo?uLand=h8PD0L',    /* 有料広告経由(エルメ流入経路489115) */
+  adUtmSources: ['meta', 'facebook', 'instagram', 'google']                          /* 広告と判定するutm_source値 */
+};</script>
 </head>
 <body>
 

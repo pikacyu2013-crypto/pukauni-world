@@ -124,7 +124,18 @@
   });
 
   /* ============ LINE Add Friend URL Injection ============ */
-  const LINE_ADD_URL = window.__PIKA_CONFIG?.lineAddUrl || 'https://s.lmes.jp/landing-qr/2007823244-g627Jxpo?uLand=FDsNFP';
+  /* 広告経由の判定: 広告リンクだけが utm_source を運ぶ(オーガニックのfbclid等は無視)。
+     一度広告と判定したら sessionStorage に保持し、ページ内遷移後もエルメの広告用流入経路(uLand=h8PD0L)へ誘導する */
+  const AD_SOURCES = window.__PIKA_CONFIG?.adUtmSources || [];
+  const utmSource = (params.get('utm_source') || '').toLowerCase();
+  if (AD_SOURCES.includes(utmSource)) {
+    try { sessionStorage.setItem('pika_ad_visitor', '1'); } catch (_) {}
+  }
+  let isAdVisitor = false;
+  try { isAdVisitor = sessionStorage.getItem('pika_ad_visitor') === '1'; } catch (_) {}
+  const LINE_ADD_URL = (isAdVisitor && window.__PIKA_CONFIG?.lineAddUrlAd)
+    || window.__PIKA_CONFIG?.lineAddUrl
+    || 'https://s.lmes.jp/landing-qr/2007823244-g627Jxpo?uLand=FDsNFP';
   const lineBtn = document.getElementById('line-add-friend');
   if (lineBtn) {
     lineBtn.href = LINE_ADD_URL;
