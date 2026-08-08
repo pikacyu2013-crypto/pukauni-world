@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#f7dcec">
+<title>PIKA☆UNIA｜あの日の解放を、もう一度</title>
+<meta name="description" content="自己解放セッション体験会から数日後。あの日叫んだ本音を、日常に定着させるために。">
+<meta property="og:title" content="あの日の解放を、もう一度｜PIKA☆UNIA">
+<meta property="og:description" content="体験会で解放したエネルギー、1回で終わらせるのはもったいない。数日経った今、もう一度ふり返ってみてください。">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho+B1:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#3a2a44;--ink-soft:rgba(58,42,68,.62);
+  --pink:#e6007e;--pink-deep:#c1006a;--pink2:#ff5fa2;
+  --mark:#f9bcd8;--mark-soft:#fcd9e9;--lav:#b48fd4;
+  --bg1:#fbeaf3;--bg2:#efe6f8;--bg3:#e4f2ee;--bg4:#fdeef5;--white:#fffafc;
+  --font-min:'Shippori Mincho B1',serif;--font-go:'Noto Sans JP',sans-serif;--font-en:'Cormorant Garamond',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:var(--font-go);font-weight:400;color:var(--ink);line-height:1.9;letter-spacing:.02em;overflow-x:hidden;
+  word-break:auto-phrase;line-break:strict;overflow-wrap:break-word;
+  background:linear-gradient(160deg,var(--bg1),var(--bg2) 38%,var(--bg3) 68%,var(--bg4));}
+.sparkles{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.7;
+  background-image:
+    radial-gradient(1.4px 1.4px at 12% 18%,#fff,transparent),radial-gradient(1.2px 1.2px at 78% 12%,#fff,transparent),
+    radial-gradient(1.6px 1.6px at 30% 62%,#fff,transparent),radial-gradient(1.1px 1.1px at 88% 55%,#fff,transparent),
+    radial-gradient(1.5px 1.5px at 62% 82%,#fff,transparent),radial-gradient(1.2px 1.2px at 44% 34%,#fff,transparent),
+    radial-gradient(1.3px 1.3px at 8% 78%,#fff,transparent),radial-gradient(1.1px 1.1px at 95% 88%,#fff,transparent);
+  background-repeat:no-repeat;}
+.deck{scroll-snap-type:y proximity;position:relative;}
+.slide{min-height:100svh;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;padding:96px 26px;scroll-snap-align:start;position:relative;overflow:hidden;}
+.slide .inner{width:100%;max-width:680px;margin:0 auto;position:relative;z-index:2;}
+.progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(to right,var(--pink),var(--pink2),var(--lav));z-index:200;transition:width .1s linear;}
+.brandmark{position:fixed;bottom:12px;left:0;right:0;text-align:center;font-family:var(--font-en);font-size:.72rem;font-weight:500;letter-spacing:.4em;color:var(--ink-soft);z-index:150;pointer-events:none;opacity:.55;padding-bottom:env(safe-area-inset-bottom);}
+h1{font-family:var(--font-min);font-weight:700;font-size:clamp(1.75rem,7.4vw,2.9rem);line-height:1.55;letter-spacing:.03em;color:var(--ink);}
+h2{font-family:var(--font-min);font-weight:600;font-size:clamp(1.3rem,5.6vw,1.95rem);line-height:1.6;letter-spacing:.03em;margin-bottom:20px;color:var(--ink);}
+p{font-family:var(--font-go);font-weight:400;font-size:clamp(1rem,4.2vw,1.15rem);line-height:1.95;color:var(--ink-soft);max-width:34em;margin:0 auto;}
+.lead p{font-size:clamp(1.15rem,5.2vw,1.55rem);font-weight:500;color:var(--ink);line-height:1.8;}
+strong{font-weight:700;color:var(--ink);}
+.pink{color:var(--pink);}
+.en{font-family:var(--font-en);letter-spacing:.05em;}
+.eyebrow{font-family:var(--font-en);font-size:.8rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--pink);margin-bottom:24px;display:block;}
+.small{font-size:.85rem;color:var(--ink-soft);margin-top:18px;line-height:1.8;}
+.mark{background:linear-gradient(transparent 58%,var(--mark) 58%);padding:0 .12em;border-radius:2px;color:var(--ink);font-weight:700;}
+.mark-full{display:inline-block;background:var(--mark);color:var(--ink);font-weight:700;padding:.12em .5em;border-radius:3px;margin:.12em 0;line-height:1.7;}
+.uline{position:relative;white-space:nowrap;font-weight:700;color:var(--ink);}
+.uline::after{content:'';position:absolute;left:-2%;right:-2%;bottom:-.16em;height:.34em;background:no-repeat center/100% 100% url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12'%3E%3Cpath d='M2 8 C40 3 70 10 100 6 S160 3 198 7' stroke='%23d63a4e' stroke-width='3.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");}
+.hair{width:44px;height:2px;background:var(--pink);margin:0 auto 26px;border-radius:2px;opacity:.85;}
+.hair.aft{margin:26px auto 0;}
+/* skins */
+.s-burst{color:#fff;}
+.s-burst::before{content:'';position:absolute;inset:0;z-index:1;
+  background:radial-gradient(circle at 50% 46%, rgba(255,255,255,.98) 0%, rgba(255,200,232,.7) 11%, rgba(230,0,126,.34) 30%, rgba(74,20,66,.78) 66%, #1c0a20 100%),
+  repeating-conic-gradient(from 0deg at 50% 46%, transparent 0deg 1.5deg, rgba(255,255,255,.11) 1.5deg 2.3deg, transparent 2.3deg 3.8deg);}
+.s-burst .inner{z-index:2;}
+.s-burst h1{color:#fff;text-shadow:0 0 22px rgba(255,120,190,.6),0 2px 6px rgba(0,0,0,.25);font-weight:800;}
+.s-burst h2{color:#fff;}
+.s-burst p{color:rgba(255,255,255,.92);}
+.s-burst .eyebrow{color:#ffd6ec;}
+.s-burst .hair{background:#ffd6ec;}
+.s-white{background:var(--white);}
+.s-white::before{content:'';position:absolute;inset:0;background:radial-gradient(120% 60% at 0% 0%,rgba(249,188,216,.5),transparent 55%),radial-gradient(120% 60% at 100% 100%,rgba(180,143,212,.35),transparent 55%);}
+.s-glow::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,rgba(255,255,255,.85),transparent 60%);}
+.logo{font-family:var(--font-en);font-weight:600;font-size:clamp(2.6rem,13vw,4.6rem);letter-spacing:.04em;line-height:1;color:#fff;text-shadow:0 0 26px rgba(255,95,162,.85),0 0 6px rgba(255,255,255,.7);}
+.logo .star{color:#ffd6ec;}
+.tagline{font-family:var(--font-min);font-weight:600;font-size:clamp(.95rem,4.4vw,1.25rem);color:#fff;margin-bottom:20px;letter-spacing:.04em;text-shadow:0 1px 8px rgba(0,0,0,.3);}
+.tagline .hi{color:#ffd6ec;}
+.big-num{font-family:var(--font-min);font-weight:800;color:var(--pink);font-size:clamp(4rem,22vw,7.5rem);line-height:1;letter-spacing:-.01em;}
+.strike{color:var(--ink-soft);text-decoration:line-through;text-decoration-color:var(--pink2);font-weight:700;}
+/* voice card (体験会参加者) */
+.vcard{max-width:330px;margin:0 auto;text-align:left;}
+.vimg{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;border-radius:18px;box-shadow:0 16px 38px rgba(180,80,150,.22);display:block;}
+.vquote{font-family:var(--font-min);font-weight:700;font-size:clamp(1.1rem,4.8vw,1.35rem);line-height:1.55;color:var(--ink);margin:18px 0 8px;}
+.vbody{font-size:.88rem;line-height:1.8;color:var(--ink-soft);margin-bottom:10px;}
+.vname{font-size:.8rem;color:var(--pink-deep);font-weight:700;letter-spacing:.02em;}
+/* graduate result chips */
+.rgrid{display:flex;flex-direction:column;gap:12px;max-width:460px;margin:0 auto;width:100%;}
+.rrow{background:var(--white);border-radius:12px;padding:16px 20px;text-align:left;box-shadow:0 8px 22px rgba(180,80,150,.12);border-left:4px solid var(--pink);}
+.rrow .rq{font-family:var(--font-min);font-weight:700;font-size:1.02rem;color:var(--ink);margin-bottom:4px;}
+.rrow .rr{display:inline-block;background:var(--mark-soft);color:var(--pink-deep);font-weight:700;font-size:.82rem;padding:.22em .6em;border-radius:6px;margin-top:4px;}
+.rrow .rn{font-size:.76rem;color:var(--ink-soft);margin-top:6px;}
+/* program list */
+.plist{width:100%;max-width:540px;margin:0 auto;text-align:left;}
+.pitem{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px dashed rgba(180,143,212,.4);}
+.pitem .no{flex:none;width:26px;height:26px;border-radius:50%;background:var(--pink);color:#fff;font-family:var(--font-en);font-weight:600;font-size:.9rem;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+.pitem .pt{font-size:.96rem;line-height:1.55;color:var(--ink);font-weight:500;}
+.pitem .pt small{display:block;font-size:.79rem;color:var(--ink-soft);font-weight:400;margin-top:2px;}
+.pitem .pv{margin-left:auto;font-family:var(--font-en);font-weight:600;color:var(--ink-soft);font-size:.85rem;white-space:nowrap;padding-left:8px;}
+/* chips */
+.chips{display:flex;flex-direction:column;gap:14px;max-width:440px;margin:0 auto;width:100%;}
+.chip{background:var(--white);border-radius:12px;padding:20px 22px;text-align:left;box-shadow:0 8px 24px rgba(180,80,150,.12);border-left:4px solid var(--pink);}
+.chip .ct{font-family:var(--font-min);font-weight:700;font-size:1.1rem;color:var(--ink);margin-bottom:5px;}
+.chip .cd{font-size:.9rem;color:var(--ink-soft);line-height:1.7;}
+.chip .cnum{font-family:var(--font-en);font-weight:600;color:var(--pink);font-size:.85rem;letter-spacing:.15em;display:block;margin-bottom:6px;}
+/* 3 doors */
+.doors{display:flex;flex-direction:column;gap:16px;max-width:460px;margin:0 auto;width:100%;}
+.door{border-radius:14px;padding:22px 24px;text-align:left;}
+.door.d1{background:rgba(255,255,255,.55);border:1px dashed rgba(58,42,68,.25);}
+.door.d2{background:rgba(255,255,255,.7);border:1px dashed rgba(58,42,68,.3);}
+.door.d3{background:linear-gradient(135deg,#ff6fb0,#e6007e);color:#fff;box-shadow:0 14px 34px rgba(230,0,126,.32);}
+.door .dn{font-family:var(--font-en);font-weight:600;letter-spacing:.15em;font-size:.8rem;opacity:.8;display:block;margin-bottom:6px;}
+.door .dt{font-family:var(--font-min);font-weight:700;font-size:1.12rem;line-height:1.5;}
+.door.d3 .dt{color:#fff;}.door.d1 .dt,.door.d2 .dt{color:var(--ink);}.door.d3 .dn{color:#ffe3f0;opacity:1;}
+/* checklist */
+.clist{max-width:460px;margin:0 auto;text-align:left;list-style:none;}
+.clist li{position:relative;padding:9px 0 9px 30px;font-size:1rem;color:var(--ink);line-height:1.6;border-bottom:1px solid rgba(180,143,212,.25);}
+.clist li::before{content:'♪';position:absolute;left:0;top:9px;color:var(--pink);font-weight:700;}
+.clist.no li::before{content:'×';color:var(--ink-soft);}
+/* CTA */
+.cta-btn{display:inline-block;margin-top:8px;font-family:var(--font-go);font-weight:700;font-size:1.08rem;letter-spacing:.05em;color:#fff;background:linear-gradient(135deg,#ff6fb0,#e6007e);padding:18px 48px;border-radius:999px;text-decoration:none;box-shadow:0 12px 30px rgba(230,0,126,.34);transition:transform .2s,box-shadow .2s;}
+.cta-btn:active{transform:translateY(1px);box-shadow:0 6px 18px rgba(230,0,126,.3);}
+.cta-note{font-size:.86rem;color:var(--ink-soft);margin-top:20px;line-height:1.8;}
+.scroll-hint{position:absolute;bottom:36px;left:0;right:0;text-align:center;color:#fff;z-index:3;}
+.scroll-hint .en{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;display:block;margin-bottom:8px;opacity:.85;}
+.scroll-hint .arrow{display:inline-block;width:2px;height:26px;background:#ffd6ec;opacity:.8;animation:drop 1.8s ease-in-out infinite;border-radius:2px;}
+@keyframes drop{0%,100%{transform:scaleY(.4);transform-origin:top;opacity:.35;}50%{transform:scaleY(1);opacity:.85;}}
+.reveal-el{opacity:0;transform:translateY(20px);transition:opacity .9s cubic-bezier(.23,1,.32,1),transform .9s cubic-bezier(.23,1,.32,1);}
+.reveal-el.in{opacity:1;transform:none;}
+.reveal-el:nth-child(2){transition-delay:.09s;}.reveal-el:nth-child(3){transition-delay:.18s;}
+.reveal-el:nth-child(4){transition-delay:.27s;}.reveal-el:nth-child(5){transition-delay:.36s;}
+@media (prefers-reduced-motion:reduce){.reveal-el{opacity:1;transform:none;transition:none;}.scroll-hint .arrow{animation:none;}html{scroll-behavior:auto;}}
+</style>
+</head>
+<body>
+<div class="sparkles"></div>
+<div class="progress" id="progress"></div>
+<div class="brandmark">@pika☆unia</div>
+
+<main class="deck">
+
+<!-- ===== 00 OPENING ===== -->
+<section class="slide s-burst">
+  <div class="inner">
+    <p class="tagline reveal-el">あなたの全てを <span class="hi">解放</span> して <span class="hi">覚醒</span>、<span class="hi">価値化</span> する</p>
+    <div class="logo reveal-el">PIKA<span class="star">☆</span>UNIA</div>
+    <p class="reveal-el" style="margin-top:26px;">体験会から、数日。<br>あの日の解放は、まだ響いていますか。</p>
+  </div>
+  <div class="scroll-hint"><span class="en">Scroll</span><span class="arrow"></span></div>
+</section>
+
+<section class="slide s-white">
+  <div class="inner">
+    <span class="eyebrow reveal-el">Thank you</span>
+    <h1 class="reveal-el">あの日、<br>自己解放セッションに<br>来てくれて、<br>ありがとう。</h1>
+  </div>
+</section>
+
+<!-- ===== 01 追体験 ===== -->
+<section class="slide">
+  <div class="inner">
+    <div class="hair reveal-el"></div>
+    <h1 class="reveal-el">あなたが叫んだこと、<br>覚えていますか。</h1>
+    <div class="hair aft reveal-el"></div>
+  </div>
+</section>
+
+<section class="slide s-burst">
+  <div class="inner">
+    <h1 class="reveal-el">あなたの本音は今も、<br>響いています。</h1>
+    <p class="reveal-el" style="margin-top:18px;">ドラムは、人の本音を<br>解放する力を持っている。</p>
+  </div>
+</section>
+
+<section class="slide s-white s-glow">
+  <div class="inner lead">
+    <p class="reveal-el">解放されたあなたが、<br>本当の夢を<br>日常で叶えていく。</p>
+    <p class="reveal-el" style="margin-top:22px;font-size:1.05rem;color:var(--ink-soft);font-weight:400;">そのために、伝えたいことがあります。</p>
+  </div>
+</section>
+
+<!-- ===== 02 なぜ戻るのか（数日後にこそ刺さる） ===== -->
+<section class="slide s-burst">
+  <div class="inner">
+    <p class="reveal-el" style="margin-bottom:10px;">今、感動で解放された<br>あなたのその本音のエネルギー。</p>
+    <h1 class="reveal-el" style="font-size:clamp(1.7rem,7vw,2.6rem);"><span class="mark-full">一回で終わらせないで。</span></h1>
+  </div>
+</section>
+
+<section class="slide s-white">
+  <div class="inner">
+    <span class="eyebrow reveal-el">なぜなら…</span>
+    <h1 class="reveal-el">解放しても、すぐ<br><span class="uline">元に戻ってしまう</span><br>人が多いから。</h1>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner lead">
+    <p class="reveal-el">数日経った今、<br>少しそう感じていませんか。</p>
+    <p class="reveal-el" style="margin-top:22px;font-size:1.05rem;color:var(--ink-soft);font-weight:400;">解放は<strong>ひとりでは、本当に難しい。</strong><br>どんな人も、自分のことは自分ではわからないから。</p>
+  </div>
+</section>
+
+<section class="slide s-white">
+  <div class="inner">
+    <h2 class="reveal-el">「一瞬」の感動を<br>“人生の変化”にするには？</h2>
+    <div class="hair aft reveal-el"></div>
+    <p class="reveal-el" style="margin-top:24px;font-size:1.5rem;">ずばり、<span class="mark">環境が必要。</span></p>
+  </div>
+</section>
+
+<section class="slide s-burst">
+  <div class="inner">
+    <p class="reveal-el" style="margin-bottom:10px;">さぁ、あなたの</p>
+    <h1 class="reveal-el">本当の“音”（本音）を、<br>日常に定着させていこう。</h1>
+    <p class="reveal-el" style="margin-top:18px;">それを可能にするのが、PIKA☆UNIA。</p>
+  </div>
+</section>
+
+<!-- ===== 03 身体の解放 ===== -->
+<section class="slide s-white">
+  <div class="inner">
+    <span class="eyebrow reveal-el">あの15分の意味</span>
+    <h2 class="reveal-el">叫んだとき——<br>何かの才能は、<br>必要でしたか？</h2>
+    <p class="reveal-el">ポジティブシンキングは、必要でしたか。</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <div class="hair reveal-el"></div>
+    <h1 class="reveal-el">これが、<br><span class="pink">「身体の解放」</span>です。</h1>
+    <p class="reveal-el small">本を読んで「解放しましょう」と言われるのと、<br>爆音の中で実際に叫ぶのと。どっちが効いた？</p>
+  </div>
+</section>
+
+<!-- ===== 04 仲間の声（体験会参加者・写真） ===== -->
+<section class="slide s-white">
+  <div class="inner">
+    <span class="eyebrow reveal-el">Voices</span>
+    <h1 class="reveal-el">あの場所で、<br>みんなが感じたこと。</h1>
+    <p class="reveal-el small">同じ体験会に来た、仲間たちの声。</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner"><div class="vcard reveal-el" style="max-width:392px;">
+    <img src="assets/event1.jpg?6" alt="体験会の様子" loading="lazy" style="width:100%;height:auto;border-radius:16px;box-shadow:0 14px 32px rgba(180,80,150,.22);display:block;">
+    <p class="vquote" style="margin-top:16px;">魂が震えて、<br>涙が止まらなかった。</p>
+    <p class="vbody">無意識に押さえ込んでいたことに、気づいた。<br>自分の魂の輝きを、思い出させてくれました。</p>
+    <p class="vname">PIKA☆UNIA 体験会参加者</p>
+  </div></div>
+</section>
+
+<section class="slide">
+  <div class="inner"><div class="vcard reveal-el" style="max-width:392px;">
+    <img src="assets/event2.jpg?6" alt="体験会の様子" loading="lazy" style="width:100%;height:auto;border-radius:16px;box-shadow:0 14px 32px rgba(180,80,150,.22);display:block;">
+    <p class="vquote" style="margin-top:16px;">ブゥワーって、<br>解放できた。</p>
+    <p class="vbody">PIKA☆さんのドラムの振動が、気持ちよくて。<br>音を浴びた瞬間、空気が一変した。</p>
+    <p class="vname">PIKA☆UNIA 体験会参加者</p>
+  </div></div>
+</section>
+
+<section class="slide">
+  <div class="inner"><div class="vcard reveal-el" style="max-width:392px;">
+    <img src="assets/event3.jpg?6" alt="体験会の様子" loading="lazy" style="width:100%;height:auto;border-radius:16px;box-shadow:0 14px 32px rgba(180,80,150,.22);display:block;">
+    <p class="vquote" style="margin-top:16px;">“ほんまの自分”を、<br>思い出した。</p>
+    <p class="vbody">ブレずに本音を出せて、最高の時間。<br>短時間でこんなに、って驚きました。</p>
+    <p class="vname">PIKA☆UNIA 体験会参加者</p>
+  </div></div>
+</section>
+
+<section class="slide">
+  <div class="inner"><div class="vcard reveal-el" style="max-width:392px;">
+    <img src="assets/event4.jpg?6" alt="体験会の様子" loading="lazy" style="width:100%;height:auto;border-radius:16px;box-shadow:0 14px 32px rgba(180,80,150,.22);display:block;">
+    <p class="vquote" style="margin-top:16px;">自分の声を、<br>初めて素敵だと思えた。</p>
+    <p class="vbody">みんなで奏でられるなんて、思ってなかった。<br>本当に、感動しました。</p>
+    <p class="vname">PIKA☆UNIA 体験会参加者</p>
+  </div></div>
+</section>
+
+<section class="slide">
+  <div class="inner"><div class="vcard reveal-el" style="max-width:392px;">
+    <img src="assets/event5.jpg?6" alt="体験会の様子" loading="lazy" style="width:100%;height:auto;border-radius:16px;box-shadow:0 14px 32px rgba(180,80,150,.22);display:block;">
+    <p class="vquote" style="margin-top:16px;">解放したら、<br>こんなに気持ちいい。</p>
+    <p class="vbody">やりたいことがどんどん出てきて、<br>その夜は、寝つけないほど元気に！</p>
+    <p class="vname">PIKA☆UNIA 体験会参加者</p>
+  </div></div>
+</section>
+
+<!-- ===== 05 自己解放とは（意味の定着） ===== -->
+<section class="slide s-white">
+  <div class="inner">
+    <span class="eyebrow reveal-el">自己解放とは</span>
+    <h1 class="reveal-el">自己解放すると、<br><span class="pink">0（ゼロ）</span>に戻る。</h1>
+    <p class="reveal-el" style="margin-top:16px;">＝ ありのまま（本来）の自分。<br>どんな自分でも、本音を素直に出せる状態。</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner lead">
+    <p class="reveal-el">ゼロポイントから、<br>自分の人生を<strong>選択</strong>できる。</p>
+    <p class="reveal-el" style="margin-top:22px;font-size:1.05rem;color:var(--ink-soft);font-weight:400;">あなたが、あなたの人生の<span class="pink" style="font-weight:700;">創造主</span>になる。</p>
+  </div>
+</section>
+
+<section class="slide s-white">
+  <div class="inner">
+    <span class="eyebrow reveal-el">大丈夫</span>
+    <h2 class="reveal-el">解放できないのは、<br><span class="mark">あなたのせいじゃない。</span></h2>
+    <ul class="clist no reveal-el" style="margin-top:18px;">
+      <li>理由① 環境の問題</li>
+      <li>理由② 設定の問題（親・社会・教育・思い込み）</li>
+      <li>理由③ 行動の制限（音が出せない・集まれない）</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide s-burst">
+  <div class="inner">
+    <span class="eyebrow reveal-el">大前提</span>
+    <h1 class="reveal-el">あなたが、あなたに<br>感動する必要がある。</h1>
+    <p class="reveal-el small">自分を震わせ、振動を浴び続ける。<br>感じられるのは、震えがあるから。<br>——だから“環境”と“継続”が要る。</p>
+  </div>
+</section>
+
+<!-- ===== 06 PIKA ===== -->
+<section class="slide s-white">
+  <div class="inner">
+    <span class="eyebrow reveal-el">Who is PIKA☆</span>
+    <img class="reveal-el" src="assets/pika-child.jpg" alt="幼少期のPIKA" style="width:194px;max-width:56%;height:auto;border-radius:16px;box-shadow:0 14px 32px rgba(120,90,140,.28);display:block;margin:6px auto 20px;">
+    <h1 class="reveal-el">かくいう私も、<br>こんな人でした。</h1>
+    <p class="reveal-el" style="margin-top:16px;">笑えない。<br>人が楽しそうだと、孤独を感じる。<br>本音がわからない。<br>あと一歩が、踏み出せない——</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <img class="reveal-el" src="assets/pika-drums.jpg" alt="ドラムを叩くPIKA☆" style="width:100%;max-width:430px;height:auto;border-radius:16px;box-shadow:0 16px 36px rgba(180,80,150,.26);display:block;margin:0 auto 22px;">
+    <h2 class="reveal-el">それが「ドラム（音）で<br>解放」するうちに、変わった。</h2>
+    <p class="reveal-el small">PIKA☆ — アーティスト／ドラマー／コンサルタント。<br>19歳より女性ロックバンド「あふりらんぽ」でドラムボーカル。<br>2005年キューンSONYよりメジャーデビュー。<br>世界21ヵ国ツアー、FUJI ROCK出演、オノ・ヨーコとの共演。<br>1000人ドラム「TAIYO33OSAKA」主催。<br>今は4歳と7歳を育てるママドラマー。</p>
+  </div>
+</section>
+
+<section class="slide s-burst">
+  <div class="inner">
+    <div class="hair reveal-el"></div>
+    <h1 class="reveal-el">あなたが本氣で震えれば、<br>必ず、誰かを<br>震わせる人になる。</h1>
+    <p class="reveal-el" style="margin-top:16px;">— PIKA☆</p>
+  </div>
+</section>
+
+<section class="slide s-white s-glow">
+  <div class="inner">
+    <div class="hair reveal-el"></div>
+    <h1 class="reveal-el">そこに、価値がある。</h1>
+    <p class="reveal-el" style="margin-top:20px;font-size:clamp(1.1rem,4.8vw,1.4rem);font-weight:500;color:var(--ink);line-height:1.8;">あなたの存在が、<br><span class="pink" style="font-weight:700;">世界の価値</span>になる。</p>
+  </div>
+</section>
+
+<section class="slide s-burst">
+  <div class="inner">
+    <div class="hair reveal-el"></div>
+    <h1 class="reveal-el">あなたの本音は、<br>存在そのものになる。</h1>
+  </div>
+</section>
+
+<!-- ===== 07 継続した先の変化（卒業生） ===== -->
+<section class="slide s-white">
+  <div class="inner">
+    <span class="eyebrow reveal-el">継続した、その先</span>
+    <h2 class="reveal-el">解放を“継続”した人に<br>起きたこと。</h2>
+    <div class="rgrid" style="margin-top:22px;">
+      <div class="rrow reveal-el"><div class="rq">満たされない感覚に、終止符。</div><span class="rr">経済的な不安からも、解放された。</span><div class="rn">40代・傾聴士 Nさん</div></div>
+      <div class="rrow reveal-el"><div class="rq">誰かのためじゃない。わたしを生きる。</div><span class="rr">自己解放を通してビジネスの売上1.5倍</span><div class="rn">40代・チーズ職人 よっちゃん</div></div>
+      <div class="rrow reveal-el"><div class="rq">あぁ、やっと鎧が解けた！</div><span class="rr">人生が180度激変／理想のパートナーとの出会い</span><div class="rn">30代・パフォーマンスディレクター 渡邊翠さん</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 08 PIKA☆UNIAとは（オファー） ===== -->
+<section class="slide s-burst">
+  <div class="inner">
+    <span class="eyebrow reveal-el">The Program</span>
+    <div class="logo reveal-el" style="font-size:clamp(2.1rem,10vw,3.6rem);">PIKA<span class="star">☆</span>UNIA</div>
+    <p class="reveal-el" style="margin-top:22px;">究極の体験型・自己解放コミュニティ。<br>“自分を生きる力”を取り戻す。</p>
+  </div>
+</section>
+
+<section class="slide s-white">
+  <div class="inner">
+    <span class="eyebrow reveal-el">Contents</span>
+    <div class="plist">
+      <div class="pitem reveal-el"><span class="no">1</span><span class="pt">事前 個別コンサル 30分<small>オンライン</small></span><span class="pv">¥55,000</span></div>
+      <div class="pitem reveal-el"><span class="no">2</span><span class="pt">定例 本音解放グループコンサル<small>火19:00〜 60分・月4回／計16回</small></span><span class="pv">¥320,000</span></div>
+      <div class="pitem reveal-el"><span class="no">3</span><span class="pt">リアル対面 自己解放セッション 120分 ×4回<small>東京・大阪・奈良のいずれかで参加</small></span><span class="pv">¥154,000</span></div>
+      <div class="pitem reveal-el"><span class="no">4</span><span class="pt">AUWAマインド覚醒セミナー 動画6本<small>毎月1回オンラインでリアタイ参加可</small></span><span class="pv">¥465,000</span></div>
+      <div class="pitem reveal-el"><span class="no">5</span><span class="pt">Discord専用スレッド＋個別部屋<small>24時間質問OK・全8個の感情スレッド</small></span><span class="pv">¥332,000</span></div>
+      <div class="pitem reveal-el"><span class="no">6</span><span class="pt">エネルギー呼吸瞑想ワーク動画<small>PIKA☆UNIAオリジナル〈丹田呼吸〉</small></span><span class="pv">¥25,000</span></div>
+      <div class="pitem reveal-el"><span class="no">7</span><span class="pt">年1回の奈良リトリート<small>卒業後もみんなと繋がれる</small></span><span class="pv">—</span></div>
+    </div>
+    <p class="reveal-el small">※最新の内容・開催日程はLINEでご案内します。</p>
+  </div>
+</section>
+
+<!-- ===== 個別部屋スポットライト（一番のサービス） ===== -->
+<section class="slide s-glow">
+  <div class="inner">
+    <span class="eyebrow reveal-el">いちばん大切にしている場所</span>
+    <div class="door d3 reveal-el" style="text-align:center;padding:32px 26px;margin-top:6px;">
+      <span class="dn">DISCORD 個別部屋</span>
+      <div class="dt" style="font-size:clamp(1.45rem,6.2vw,2.05rem);line-height:1.5;margin:10px 0 16px;">PIKA☆が、<br>あなたの相棒に。</div>
+      <p style="color:#fff;font-weight:500;font-size:1.02rem;line-height:1.85;max-width:none;margin:0;">24時間、あなたの解放に寄り添う、<br>あなただけの個別部屋。<br>いつでも本音を置いていける。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 両軸USP（グループ×個別はここだけ） ===== -->
+<section class="slide s-white">
+  <div class="inner">
+    <span class="eyebrow reveal-el">ここだけの強み</span>
+    <h2 class="reveal-el">グループ講座 × 個別サポート。<br><span class="mark">両軸が揃うのは、ここだけ。</span></h2>
+    <div class="chips" style="margin-top:22px;">
+      <div class="chip reveal-el"><span class="cnum">Axis 01</span><div class="ct">グループ講座</div><div class="cd">仲間と響き合い、解放を加速。ひとりじゃないから、続く。</div></div>
+      <div class="chip reveal-el"><span class="cnum">Axis 02</span><div class="ct">個別サポート</div><div class="cd">PIKA☆が相棒として伴走。あなただけの本音に、深く寄り添う。</div></div>
+    </div>
+    <p class="reveal-el" style="margin-top:22px;font-weight:700;color:var(--pink);font-size:clamp(1.05rem,4.6vw,1.25rem);">濃密に、あなたの解放を<br>最強サポート。</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <span class="eyebrow reveal-el">特別な学び</span>
+    <h2 class="reveal-el">AUWA<br>マインド覚醒セミナー</h2>
+    <p class="reveal-el">音・脳科学・潜在意識の仕組みを座学で理解し、<br>リアルとスピリチュアルを繋げて<br><strong>現実創造の仕組み</strong>を解き明かす、全6DAY。</p>
+    <p class="reveal-el small">世界は3つの音でできている／お金のブロック大解放／<br>男性性・女性性の統合／一瞬で調和に戻るAUWA呼吸ワーク…</p>
+  </div>
+</section>
+
+<section class="slide s-white">
+  <div class="inner">
+    <span class="eyebrow reveal-el">3つの秘密</span>
+    <div class="chips">
+      <div class="chip reveal-el"><span class="cnum">Secret 01</span><div class="ct">仲間を創る</div><div class="cd">グループセッションで共に解放し、響き合う。一人より、確実に早く進める。</div></div>
+      <div class="chip reveal-el"><span class="cnum">Secret 02</span><div class="ct">安心安全のコミュニティ</div><div class="cd">クローズドな場で、本音のまま還ってこれる。個別部屋で深い本音にも対応。</div></div>
+      <div class="chip reveal-el"><span class="cnum">Secret 03</span><div class="ct">専門技術は一切不要</div><div class="cd">あの日のあなたが証明した通り。才能も技術もいらない。</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <span class="eyebrow reveal-el">Road Map</span>
+    <div class="chips">
+      <div class="chip reveal-el"><span class="cnum">Step 1</span><div class="ct">自己解放の入口</div><div class="cd">ドラム・声・体感ワークで「本音」を解放。止めていたエネルギーを流す。</div></div>
+      <div class="chip reveal-el"><span class="cnum">Step 2</span><div class="ct">本音とつながる習慣</div><div class="cd">呼吸法・感覚ワークで、日常でも本音を感じ取れるように。</div></div>
+      <div class="chip reveal-el"><span class="cnum">Step 3</span><div class="ct">行動と現実創造</div><div class="cd">解放エネルギーを行動へ。小さな挑戦から成功体験を重ねる。</div></div>
+      <div class="chip reveal-el"><span class="cnum">Step 4</span><div class="ct">存在価値の開花</div><div class="cd">自己表現が外にあふれ、「在り方＝人を解放する力」へ。</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide s-white">
+  <div class="inner">
+    <span class="eyebrow reveal-el">対面にこだわる理由</span>
+    <h2 class="reveal-el">AIが当たり前の今こそ、<br><span class="mark">リアルで出会う</span>ことに<br>最大の価値がある。</h2>
+    <p class="reveal-el" style="margin-top:16px;">会場に自ら足を運び、身体を動かし、人と出会う。<br>ここは、いつでも本音で還ってこれる<strong>魂の場所</strong>。</p>
+    <p class="reveal-el small">「自分の居場所は、自分で作っていいんだ」— スティーブ・ジョブズ</p>
+  </div>
+</section>
+
+<!-- ===== 期間のリヴィール（4ヶ月→なんと6ヶ月） ===== -->
+<section class="slide s-burst">
+  <div class="inner">
+    <span class="eyebrow reveal-el">期間のこと</span>
+    <h2 class="reveal-el">本編は、4ヶ月。</h2>
+    <p class="reveal-el">……で、終わりじゃないんです。</p>
+    <div class="hair aft reveal-el"></div>
+    <p class="reveal-el" style="margin-top:22px;">解放を“定着”させるアフターフォロー<strong style="color:#fff;">2ヶ月</strong>を、まるっとプラス。</p>
+    <h1 class="reveal-el" style="margin-top:14px;">なんと、実質<br><span style="font-size:clamp(3.4rem,20vw,6rem);line-height:1.05;display:inline-block;">6ヶ月</span>。</h1>
+    <p class="reveal-el small">手が離せるまで、ずっと一緒。</p>
+  </div>
+</section>
+
+<!-- ===== 修了リアルセッション（実質5回の対面） ===== -->
+<section class="slide s-white s-glow">
+  <div class="inner">
+    <span class="eyebrow reveal-el">しかも</span>
+    <h2 class="reveal-el">アフターフォロー期間に、<br><span class="mark">修了リアルセッション</span>。</h2>
+    <p class="reveal-el" style="margin-top:14px;">対面セッションが、もう1回ついてくる。</p>
+    <div class="reveal-el" style="margin:14px 0 4px;">実質<span class="big-num" style="font-size:clamp(3rem,17vw,5rem);vertical-align:-.04em;">5</span><span style="font-family:var(--font-min);font-weight:700;font-size:1.5rem;color:var(--ink);">回の対面</span></div>
+    <p class="reveal-el small">リアルで会って、解放を“やりきる”。<br>最後まで、伴走します。</p>
+  </div>
+</section>
+
+<!-- ===== 09 価格 ===== -->
+<section class="slide s-white s-glow">
+  <div class="inner">
+    <span class="eyebrow reveal-el">Price</span>
+    <p class="reveal-el">単価で足すと <span class="strike">135万円以上</span>。<br>ですが——</p>
+    <div class="reveal-el" style="margin:14px 0 6px;"><span class="big-num">66</span><span style="font-family:var(--font-min);font-weight:700;font-size:1.6rem;color:var(--ink);">万円</span></div>
+    <p class="reveal-el" style="font-weight:500;color:var(--ink);">税込</p>
+    <p class="reveal-el small">6ヶ月まるごと・グループコンサル8回・個別部屋・<br>アーカイブ視聴、ぜんぶ込み。</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <div class="chips">
+      <div class="chip reveal-el" style="border-left-color:var(--lav);"><div class="ct" style="margin-bottom:8px;">向いていない人</div>
+        <ul class="clist no" style="margin:0;"><li>変わりたくない・やる気がない</li><li>他責思考</li><li>覚悟を決めてコミットできない</li></ul></div>
+      <div class="chip reveal-el"><div class="ct" style="margin-bottom:8px;">こんな人にオススメ</div>
+        <ul class="clist" style="margin:0;"><li>安心を手に入れ、自分の使命を全うしたい</li><li>活力を“行動力”に変えたい</li><li>本気で自分を生きて、誰かを幸せにしたい</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 10 決断（3つの道） ===== -->
+<section class="slide s-white">
+  <div class="inner">
+    <span class="eyebrow reveal-el">Decision</span>
+    <h1 class="reveal-el">いちばん<br>やってはいけないこと。</h1>
+    <p class="reveal-el" style="margin-top:16px;font-size:1.2rem;"><span class="uline">決断を、先送りにすること。</span></p>
+    <p class="reveal-el small">「自分はどうしたいか」を決める癖が、<br>本当の自分を見つめる“選ぶ力”になる。</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <h2 class="reveal-el" style="margin-bottom:26px;">今、あなたには<br>3つの道があります。</h2>
+    <div class="doors">
+      <div class="door d1 reveal-el"><span class="dn">Road 1</span><div class="dt">何もしない道</div></div>
+      <div class="door d2 reveal-el"><span class="dn">Road 2</span><div class="dt">一人で、今までと<br>変わらない日常を進む道</div></div>
+      <div class="door d3 reveal-el"><span class="dn">Road 3</span><div class="dt">仲間と、自分の真実に<br>挑戦して一緒に進む道</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide s-burst">
+  <div class="inner">
+    <div class="hair reveal-el"></div>
+    <h1 class="reveal-el">あなたは、あなたを<br>解き放っていい。</h1>
+    <p class="reveal-el" style="margin-top:18px;">あなたの内側の本当の音（本音）は、<br>あなたの人生を、世界を変える価値があります。</p>
+    <div class="hair aft reveal-el"></div>
+  </div>
+</section>
+
+<!-- ===== 11 CTA ===== -->
+<section class="slide s-white">
+  <div class="inner">
+    <span class="eyebrow reveal-el">体験会にご参加のあなたへ</span>
+    <h2 class="reveal-el">次の一歩について、<br>このLINEで話しましょう。</h2>
+    <p class="reveal-el">聞きたいこと、迷っていること、日程のこと。<br>そして、体験会参加者への<strong>限定特典</strong>を<br>まだ受け取れるかどうかも——<br>何でも、そのまま送ってください。</p>
+    <a class="cta-btn reveal-el" href="https://line.me/R/ti/p/@331manel">LINEのトークにもどる</a>
+    <p class="cta-note reveal-el">トーク画面にもどって、<br>あの日感じたこと・今の気持ちを送ってください。<br>PIKA☆が直接お返事します。</p>
+  </div>
+</section>
+
+<section class="slide s-burst">
+  <div class="inner">
+    <div class="logo reveal-el" style="font-size:clamp(2.1rem,10vw,3.6rem);">PIKA<span class="star">☆</span>UNIA</div>
+    <h1 class="reveal-el" style="font-size:clamp(1.5rem,6.6vw,2.3rem);margin-top:22px;">自分の解放で、<br>一緒に世界を震わせよう。</h1>
+    <p class="reveal-el" style="margin-top:16px;">一緒に感動を届けて、人生を在りたい未来に。<br>それではPIKA☆UNIAで、お待ちしています。</p>
+  </div>
+</section>
+
+</main>
+
+<script>
+const progress=document.getElementById('progress');
+const onScroll=()=>{const h=document.documentElement;const max=h.scrollHeight-h.clientHeight;progress.style.width=(max>0?(h.scrollTop/max*100):0)+'%';};
+document.addEventListener('scroll',onScroll,{passive:true});onScroll();
+const els=Array.from(document.querySelectorAll('.reveal-el'));
+const revealCheck=()=>{const vh=window.innerHeight;for(const el of els){if(el.classList.contains('in'))continue;const r=el.getBoundingClientRect();if(r.top<vh*0.9&&r.bottom>0)el.classList.add('in');}};
+document.addEventListener('scroll',revealCheck,{passive:true});
+window.addEventListener('resize',revealCheck,{passive:true});
+window.addEventListener('load',revealCheck);revealCheck();
+</script>
+</body>
+</html>
