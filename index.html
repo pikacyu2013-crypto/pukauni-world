@@ -71,7 +71,7 @@ fbq('track', 'PageView');
     <p class="hero-sub-top fade-up" style="--delay:0s">PIKA☆UNIA ／ 解放のドラム 120分体験会</p>
     <h1 class="hero-headline fade-up" style="--delay:0.1s" data-variant="A">解放のドラムが、<br>あなたを変える。</h1>
     <p class="hero-sub fade-up" style="--delay:0.25s">人は、解放なしには生きていけない。<br>本音を叫ぶ120分。大阪・東京 — 完全無料リアル体験、受付中。</p>
-    <a href="#cta" class="cta-primary fade-up" style="--delay:0.4s" data-track="hero_cta">LINEで日程を確認する →</a>
+    <a href="#cta" class="cta-primary fade-up" style="--delay:0.4s" data-track="hero_cta">120分の中身を見る ↓</a>
     <div class="hero-anchor-stripe fade-up" style="--delay:0.55s">
       <span>大阪・東京</span>
       <span>120分</span>
@@ -277,7 +277,7 @@ fbq('track', 'PageView');
       </div>
     </div>
     <p class="dates-note">※ 会場の詳細住所は、参加者の安全のため LINE 登録者のみへお伝えしています。<br>※ 会場のエリアは変更になる可能性があります。</p>
-    <a href="#cta" class="cta-secondary" data-track="dates_cta">LINEで最新日程と会場を受け取る</a>
+    <a href="#cta" class="cta-secondary" data-track="dates_cta" data-line-cta>LINEで最新日程と会場を受け取る</a>
   </div>
 </section>
 
@@ -339,7 +339,7 @@ fbq('track', 'PageView');
       <p class="stack-tagline">これ全部、無料。<br>ただし、お一人さま1回。</p>
     </div>
 
-    <a href="#" id="line-add-friend" class="cta-primary cta-big" data-track="main_cta">
+    <a href="#" id="line-add-friend" class="cta-primary cta-big" data-track="main_cta" data-line-cta>
       <span class="line-logo" aria-hidden="true">LINE</span>
       友だち追加で日程を受け取る
     </a>
@@ -375,9 +375,12 @@ fbq('track', 'PageView');
 
 <!-- ============ FIXED CTA ============ -->
 <div class="cta-fixed" id="cta-fixed">
-  <a href="#cta" class="cta-primary" data-track="fixed_cta">LINEで日程を受け取る →</a>
+  <a href="#cta" class="cta-primary" data-track="fixed_cta" data-line-cta>LINEで日程を受け取る →</a>
 </div>
 
-<script src="./script.js" defer></script>
+<!-- ?v= はキャッシュ破棄用。script.js は Cloudflare Pages が max-age=14400(4時間)
+     を付けて配信するため、これが無いと HTML だけ新しく JS が4時間古いままになる。
+     script.js を変更したら必ず ?v= の日付も上げること。 -->
+<script src="./script.js?v=20260828b" defer></script>
 </body>
 </html>

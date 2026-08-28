@@ -136,16 +136,21 @@
   const LINE_ADD_URL = (isAdVisitor && window.__PIKA_CONFIG?.lineAddUrlAd)
     || window.__PIKA_CONFIG?.lineAddUrl
     || 'https://s.lmes.jp/landing-qr/2007823244-g627Jxpo?uLand=FDsNFP';
-  const lineBtn = document.getElementById('line-add-friend');
-  if (lineBtn) {
-    lineBtn.href = LINE_ADD_URL;
+  /* 【2026-08-28 修正】data-line-cta を持つCTAは全てLINE友だち追加へ直行させる。
+     以前は #line-add-friend だけが本物で、日程セクションと固定ボタンは href="#cta" の
+     ページ内スクロールだった。にもかかわらず文言は「LINEで最新日程と会場を受け取る」
+     「LINEで日程を受け取る →」で、押してもLINEに行かない = 約束と動作の不一致。
+     文言はPIKAの言葉なので変えず、動作の側を文言に合わせた。 */
+  const lineBtns = document.querySelectorAll('[data-line-cta]');
+  lineBtns.forEach(btn => {
+    btn.href = LINE_ADD_URL;
     if (LINE_ADD_URL.includes('REPLACE_ME')) {
-      lineBtn.addEventListener('click', (e) => {
+      btn.addEventListener('click', (e) => {
         e.preventDefault();
         alert('LINE公式アカウントのURLが未設定です。');
       });
     }
-  }
+  });
 
   /* ============ Bottom Fixed CTA Visibility ============ */
   const fixedCTA = document.getElementById('cta-fixed');
@@ -180,11 +185,19 @@
   }
 
   /* ============ Click Tracking (Pixel + GA4) ============ */
+  /* 【2026-08-28 修正】Metaへ送るイベントは main_cta のみに限定する。
+     hero_cta / dates_cta / fixed_cta の href は "#cta"(ページ内スクロール)であり、
+     LINEの友だち追加へは一切遷移しない。にもかかわらず全4つで Lead を送っていたため、
+     1人が上から順にボタンを押すだけで最大4リードが計上されていた。
+     広告セットの最適化目標が OFFSITE_CONVERSIONS(lead) のため、
+     Metaは「登録する人」ではなく「スクロールする人」を探して配信していた。
+     実測(2026-08-27): Metaリード22件に対しエルメ新規は2名、実質獲得単価 ¥1,974。
+     ページ内CTAの計測は GA4 側(cfg.ga)で引き続き取得する。 */
   const trackEventMap = {
-    hero_cta:  { ga: 'cta_hero_click',  meta: 'InitiateCheckout' },
-    dates_cta: { ga: 'cta_dates_click', meta: null },
+    hero_cta:  { ga: 'cta_hero_click',  meta: null },
+    dates_cta: { ga: 'cta_dates_click', meta: 'InitiateCheckout' },
     main_cta:  { ga: 'cta_main_click',  meta: 'InitiateCheckout' },
-    fixed_cta: { ga: 'cta_fixed_click', meta: null }
+    fixed_cta: { ga: 'cta_fixed_click', meta: 'InitiateCheckout' }
   };
 
   document.addEventListener('click', (e) => {
@@ -194,7 +207,9 @@
     const cfg = trackEventMap[trackId];
     if (!cfg) return;
 
-    if (typeof fbq === 'function') {
+    /* Lead は実際にLINE友だち追加へ遷移するCTA(data-line-cta)のみ。上の注記を参照。
+       hero_cta は href="#cta" のページ内スクロールなので送らない。 */
+    if (typeof fbq === 'function' && target.hasAttribute('data-line-cta')) {
       fbq('track', 'Lead', { content_name: trackId });
       if (cfg.meta) fbq('track', cfg.meta, { content_name: trackId });
     }
