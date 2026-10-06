@@ -1,2 +1,5 @@
 /ads/*
   Access-Control-Allow-Origin: *
+
+/kiyaku/*
+  Cache-Control: public, max-age=300
