@@ -195,9 +195,9 @@
      ページ内CTAの計測は GA4 側(cfg.ga)で引き続き取得する。 */
   const trackEventMap = {
     hero_cta:  { ga: 'cta_hero_click',  meta: null },
-    dates_cta: { ga: 'cta_dates_click', meta: 'InitiateCheckout' },
-    main_cta:  { ga: 'cta_main_click',  meta: 'InitiateCheckout' },
-    fixed_cta: { ga: 'cta_fixed_click', meta: 'InitiateCheckout' }
+    dates_cta: { ga: 'cta_dates_click', meta: null },
+    main_cta:  { ga: 'cta_main_click',  meta: null },
+    fixed_cta: { ga: 'cta_fixed_click', meta: null }
   };
 
   document.addEventListener('click', (e) => {
